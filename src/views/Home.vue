@@ -11,6 +11,11 @@ import HelloWorld from '@/components/HelloWorld.vue';
 
 export default {
   name: 'Home',
+  created(){
+    if(AppStorage.getToken() == undefined){
+         this.$router.push({path: '/login'})
+    } 
+  },
   components: {
     HelloWorld,
   },
